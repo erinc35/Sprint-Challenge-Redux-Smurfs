@@ -40,7 +40,22 @@ const smurfReducer = (state=initalState, {type, payload}) => {
         ...state,
         error: payload
       }
-
+    case  ADD_SMURF_START:
+      return {
+        ...state,
+        error: null
+      };
+    case  ADD_SMURF_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        smurfs: payload
+      };
+    case  ADD_SMURF_FAILURE:
+      return {
+        ...state,
+        error: payload
+      }
     default: 
       return state
   }
