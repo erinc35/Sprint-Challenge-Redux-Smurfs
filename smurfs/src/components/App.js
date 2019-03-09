@@ -14,11 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurf: {
-        name: '',
-        age: null,
-        height: ''
-      }
+      
     }
   }
 

@@ -3,17 +3,29 @@ import React, { Component } from 'react';
 export default class SmurfForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            smurf: {
+                name: '',
+                age: null,
+                height: ''
+            }
+        }
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        if(this.props.isUpdatingSmurf) {
-            this.props.updateSmurf(e);
-        }else {
+        // if(this.props.isUpdatingSmurf) {
+        //     this.props.updateSmurf(e);
+        // }else {
             this.props.addNewSmurf(e);
-        }
+        // }
     }
+
+    handleSmurfInput = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
+
 
 
     render() {
