@@ -23,7 +23,6 @@ export default class SmurfForm extends Component {
 
     handleSmurfInput = e => {
         this.setState({ [e.target.name]: e.target.value })
-        
     }
 
 
