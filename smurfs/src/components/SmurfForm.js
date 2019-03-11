@@ -17,16 +17,17 @@ export default class SmurfForm extends Component {
         // if(this.props.isUpdatingSmurf) {
         //     this.props.updateSmurf(e);
         // }else {
-            this.props.addNewSmurf(e);
+        console.log(this.state.smurf)
+        this.props.addSmurf(this.state.smurf);
         // }
     }
 
     handleSmurfInput = e => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ smurf: {
+            ...this.state.smurf,
+            [e.target.name]: e.target.value }}
+        )
     }
-
-
-
 
     render() {
         return (
