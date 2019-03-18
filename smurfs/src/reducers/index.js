@@ -15,7 +15,8 @@ import {
 
 const initalState = {
   smurfs: [],
-  error: null
+  error: null,
+  isUpdatingSmurf: false
 }
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -61,6 +62,25 @@ const smurfReducer = (state=initalState, {type, payload}) => {
       return {
         ...state,
         error: payload
+      }
+    case UPDATE_SMURF_START:
+      return {
+        ...state,
+        error: null,
+        isUpdatingSmurf: true
+      };
+    case UPDATE_SMURF_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        smurfs: payload,
+        isUpdatingSmurf: false
+      };
+    case UPDATE_SMURF_FAILURE:
+      return {
+        ...state,
+        error: payload,
+        isUpdatingSmurf: false
       }
     default: 
       return state
