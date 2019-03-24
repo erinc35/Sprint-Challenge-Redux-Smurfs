@@ -14,12 +14,12 @@ export default class SmurfForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        // if(this.props.isUpdatingSmurf) {
-        //     this.props.updateSmurf(e);
-        // }else {
+        if(this.props.isUpdatingSmurf) {
+            this.props.updateSmurf(e);
+        }else {
         console.log(this.state.smurf)
         this.props.addSmurf(this.state.smurf);
-        // }
+        }
     }
 
     handleSmurfInput = e => {
